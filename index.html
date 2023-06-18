@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Developer's Portfolio</title>
+</head>
+
+<body style="background-color: #33ccff; text-align:center">
+<h2>Developers</h2>
+<form method="post" action="/add_proj">
+    Title:
+    <input type="text" name="title">
+    Link:
+    <input type="text" name="link">
+    <button type="submit">Add project</button>
+</form>
+
+<h3>Portfolio</h3>
+{% for proj in projects %}
+<div>{{proj.id}}. {{proj.title}}   --->   <a href="proj.link">{{proj.link}}</a></div>
+{% endfor %}
+<br>
+<br>
+
+<h3>Delete all projects from Portfolio</h3>
+<form method="post" action="/delete_all">
+    <button type="submit">Delete all</button>
+</form>
+</body>
+</html>
